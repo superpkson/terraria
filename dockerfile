@@ -12,4 +12,3 @@ VOLUME ["/root/.local/share/Terraria/Worlds"]
 EXPOSE 7777
 WORKDIR /terraria/1456/Linux
 ENTRYPOINT ["./TerrariaServer.bin.x86_64"]
-CMD ["-port", "7777", "-config", "/root/.local/share/Terraria/Worlds/serverconfig.txt"]
