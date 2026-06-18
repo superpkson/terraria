@@ -9,7 +9,7 @@ on:
   push:
     # branches: [ "main" ]
     # Publish semver tags as releases.
-    tags: [ 'v1.*.*.*' ]
+    tags: [ 'v*' ]
   pull_request:
     branches: [ "main" ]
 
@@ -71,7 +71,7 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            type=semver,pattern=1.{{version}}
+            type=semver,pattern={{version}}
             type=raw,value=latest
 
       # Build and push Docker image with Buildx (don't push on PR)
